@@ -2,6 +2,7 @@
 
 '''
 create list and write elements into yaml and json files
+read those files and print them
 '''
 import json
 import yaml
