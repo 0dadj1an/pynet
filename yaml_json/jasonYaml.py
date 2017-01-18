@@ -6,6 +6,8 @@ read those files and print them
 '''
 import json
 import yaml
+from pprint import pprint as tisk
+
 
 
 
@@ -37,10 +39,16 @@ def openFile():
 
 def printList(a, b):
     
-    print a
-    print "#####################################"
-    print b
     
+    print "Yaml list is:\n {}".format(a)
+    print""
+    print "Yaml pprint format is:\n"
+    tisk(a)
+    print""
+    print "Json list is:\n {}".format(b)
+    print""
+    print "Json pprint format is:\n"
+    tisk(b)
     
 def main():
     writeFile()
