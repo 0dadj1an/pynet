@@ -41,8 +41,12 @@ def printList(a, b):
     print "#####################################"
     print b
     
-
-writeFile()
-openFile()  
     
+def main():
+    writeFile()
+    openFile()  
+
+
+if __name__ == '__main__':
+   main()
 
