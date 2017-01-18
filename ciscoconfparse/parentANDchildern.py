@@ -1,3 +1,8 @@
+'''
+reads the config file, prints parent CRYPTO map and for every map also all childern
+exercise no.6
+'''
+
 from ciscoconfparse import CiscoConfParse
 
 parse = CiscoConfParse("config.txt")
@@ -13,6 +18,9 @@ for obj in serial_objs:
     print "Childerns are:"
     for child in list_a:
         print child.text
+    count = count+1
+    
+
     
 
 
