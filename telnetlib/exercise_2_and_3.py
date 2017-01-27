@@ -18,6 +18,7 @@ class ConnectDevice02(object):
         except socket.timeout:
                 sys.exit("Unable to connect due timeout")
         self.telnetLogin()
+        self.telnetSend("terminal length 0")
         
     def telnetSend(self, command):
         
