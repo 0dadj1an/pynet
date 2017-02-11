@@ -1,5 +1,6 @@
 import time
 import paramiko
+from ansible.plugins import connection
 
 
 
@@ -38,7 +39,7 @@ def showRun(connection):
     output = connection.recv(5000)
     return output
 
-def exitFromConf():
+def exitFromConf(connection):
     ''' exit from conf t mode '''
     connection.send("exit\n")
     time.sleep(1)
