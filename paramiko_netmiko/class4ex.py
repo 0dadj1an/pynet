@@ -54,7 +54,7 @@ def main():
      disable_paging(remote_conn02)
      enterConfig(remote_conn02)
      loginBuffered(remote_conn02)
-     output = showRun(conn02)
+     output = showRun(remote_conn02)
      print output
 
     
