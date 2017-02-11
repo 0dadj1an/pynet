@@ -1,6 +1,7 @@
 import time
 import paramiko
-from ansible.plugins import connection
+import getpass
+
 
 
 
@@ -51,12 +52,13 @@ def main():
     
      ip = '184.105.247.70'
      username = 'pyclass'
-     password = '88newclass'
+     password = getpass()
      
      remote_conn=paramiko.SSHClient()
     # avoid issues with not trusted targets
      remote_conn.set_missing_host_key_policy(paramiko.AutoAddPolicy())
      remote_conn.connect(ip, username=username, password=password, look_for_keys=False, allow_agent=False)
+    #invoke shell means you can send commands more times 
      remote_conn02 = remote_conn.invoke_shell()
      
      disable_paging(remote_conn02)
