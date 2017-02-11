@@ -31,6 +31,13 @@ def loginBuffered(connection):
     output = connection.recv(5000)
     return output
 
+def showRun(connection):
+    ''' show run '''
+    connection.send("show run\n")
+    time.sleep(1)
+    output = connection.recv(5000)
+    return output
+
 
 def main():
     
@@ -46,8 +53,8 @@ def main():
      
      disable_paging(remote_conn02)
      enterConfig(remote_conn02)
-     output = loginBuffered(remote_conn02)
-     
+     loginBuffered(remote_conn02)
+     output = showRun(conn02)
      print output
 
     
