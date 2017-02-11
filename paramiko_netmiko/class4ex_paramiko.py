@@ -1,6 +1,6 @@
 import time
 import paramiko
-import getpass
+from getpass import getpass
 
 
 
