@@ -1,0 +1,52 @@
+>>> pprint.pprint(sys.path)
+['',
+ '/home/ihrbacek/DJANGOX/djproject',
+ '/home/ihrbacek/applied_python/local/lib64/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/local/lib/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/lib64/python2.7',
+ '/home/ihrbacek/applied_python/lib/python2.7',
+ '/home/ihrbacek/applied_python/lib64/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/lib/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/lib64/python2.7/lib-dynload',
+ '/usr/lib64/python2.7',
+ '/usr/lib/python2.7']
+>>> exit()
+(applied_python)[ihrbacek@ip-172-30-0-34 pynet]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 pynet]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 pynet]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 pynet]$ ls
+add_test_in_test.py  ciscoconfparse  LICENSE  modules  net_test  README.md  telnetlib  test02.py  test.py  yaml_json
+(applied_python)[ihrbacek@ip-172-30-0-34 pynet]$ cd modules/
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ pwd
+/home/ihrbacek/github/pynet/modules
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ export PYTHONPATH='/home/ihrbacek/github/pynet/modules'
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ env | grep PYTHON
+PYTHONPATH=/home/ihrbacek/github/pynet/modules
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ 
+(applied_python)[ihrbacek@ip-172-30-0-34 modules]$ python
+Python 2.7.12 (default, Sep  1 2016, 22:14:00) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> import pprint
+>>> pprint.pprint(sys.path)
+['',
+ '/home/ihrbacek/github/pynet/modules',
+ '/home/ihrbacek/applied_python/local/lib64/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/local/lib/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/lib64/python2.7',
+ '/home/ihrbacek/applied_python/lib/python2.7',
+ '/home/ihrbacek/applied_python/lib64/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/lib/python2.7/site-packages',
+ '/home/ihrbacek/applied_python/lib64/python2.7/lib-dynload',
+ '/usr/lib64/python2.7',
+ '/usr/lib/python2.7']
+
