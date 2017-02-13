@@ -26,7 +26,7 @@ def main():
          'device_type': 'cisco_ios',
          'ip':   '184.105.247.70',
          'username': 'pyclass',
-         'password': '88newclass',
+         'password': 'pasword_cisco',
          'verbose': False,
      }
     
