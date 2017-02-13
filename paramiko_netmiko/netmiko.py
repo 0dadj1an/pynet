@@ -19,33 +19,35 @@ def connect(devices):
 
 def main():
     
+    pasword_cisco = raw_input("enter Cisco router password")
+    password_juniper = raw_input("Enter Juniper password")
+    
     router01 = {
          'device_type': 'cisco_ios',
-         'ip':   '10.10.10.227',
+         'ip':   '184.105.247.70',
          'username': 'pyclass',
-         'password': 'password',
+         'password': 'pasword_cisco',
          'verbose': False,
      }
     
-    arista_sw = {
+    router02 = {
          'device_type': 'arista_eos',
-         'ip':   '10.10.10.227',
-         'username': 'admin1',
-         'password': 'password',
-         'port': 8522,               # there is a firewall performing NAT in front of this device
+         'ip':   '184.105.247.71',
+         'username': 'pyclass',
+         'password': 'pasword_cisco',
          'verbose': False,
      }
  
     juniper_srx = {
          'device_type': 'juniper',
-         'ip':   '10.10.10.227',
+         'ip':   '184.105.247.76',
          'username': 'pyclass',
-         'password': 'password',
-         'port': 9822,               # there is a firewall performing NAT in front of this device
+         'password': 'password_juniper',
+         'port': 22,               # there is a firewall performing NAT in front of this device
          'verbose': False,
      } 
     
-    devices = [router01, router02, arista_sw, juniper_srx] 
+    devices = [router01, router02, juniper_srx] 
     connect(devices)
     
 if __name__ == "__main__":
