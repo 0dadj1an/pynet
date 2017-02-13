@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 
-def connect(devices):
+def showArp(devices):
     
     time= datetime.now()
     for device in devices:
@@ -15,6 +15,19 @@ def connect(devices):
     etime = datetime.now()
     total = time - etime
     print total
+    
+def checkConfigMode(devices):
+    time= datetime.now()
+    for device in devices:
+        conn = ConnectHandler(**device)
+        output = conn.check_config_mode()
+        print "\n\n####### Device {0}#######".format(device['device_type'])
+        print output
+        print "############ END  ##############"
+    etime = datetime.now()
+    total = time - etime
+    print total
+    
 
 
 def main():
@@ -47,8 +60,11 @@ def main():
          'verbose': False,
      } 
     
-    devices = [router01, router02, juniper_srx] 
-    connect(devices)
+    devices_all = [router01, router02, juniper_srx] 
+    devices_cisco = [router01, router02]
+    showArp(devices_all)
+    checkConfigMode(devices_cisco)
+    
     
 if __name__ == "__main__":
     main()
