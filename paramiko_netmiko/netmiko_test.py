@@ -7,7 +7,7 @@ def connect(devices):
     
     time= datetime.now()
     for device in devices:
-        conn = ConnectHandler(device)
+        conn = ConnectHandler(**device)
         output = conn.send_command("show arp")
         print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
@@ -19,14 +19,14 @@ def connect(devices):
 
 def main():
     
-    pasword_cisco = raw_input("enter Cisco router password")
-    password_juniper = raw_input("Enter Juniper password")
+    pasword_cisco = raw_input("enter Cisco router password:\n")
+    password_juniper = raw_input("Enter Juniper password:\n")
     
     router01 = {
          'device_type': 'cisco_ios',
          'ip':   '184.105.247.70',
          'username': 'pyclass',
-         'password': 'pasword_cisco',
+         'password': '88newclass',
          'verbose': False,
      }
     
