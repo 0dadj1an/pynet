@@ -26,7 +26,7 @@ def main():
          'device_type': 'cisco_ios',
          'ip':   '184.105.247.70',
          'username': 'pyclass',
-         'password': 'pasword_cisco',
+         'password': pasword_cisco,
          'verbose': False,
      }
     
@@ -34,7 +34,7 @@ def main():
          'device_type': 'cisco_ios',
          'ip':   '184.105.247.71',
          'username': 'pyclass',
-         'password': 'pasword_cisco',
+         'password': pasword_cisco,
          'verbose': False,
      }
  
@@ -42,7 +42,7 @@ def main():
          'device_type': 'juniper',
          'ip':   '184.105.247.76',
          'username': 'pyclass',
-         'password': 'password_juniper',
+         'password': password_juniper,
          'port': 22,               # there is a firewall performing NAT in front of this device
          'verbose': False,
      } 
