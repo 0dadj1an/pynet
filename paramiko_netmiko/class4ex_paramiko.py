@@ -4,8 +4,7 @@ from getpass import getpass
 
 
 
-
-def disable_paging(connection):
+def disablePaging(connection):
     '''disable paging by entering terminal lenght'''
     connection.send("terminal length 0\n")
     time.sleep(1)
@@ -61,7 +60,7 @@ def main():
     #invoke shell means you can send commands more times 
      remote_conn02 = remote_conn.invoke_shell()
      
-     disable_paging(remote_conn02)
+     disablePaging(remote_conn02)
      enterConfig(remote_conn02)
      loginBuffered(remote_conn02)
      exitFromConf(remote_conn02)
