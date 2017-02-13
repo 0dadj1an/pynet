@@ -97,13 +97,13 @@ def main():
     devices_cisco = [router01, router02]
     
     showArp(devices_all)
-    enterConfigMode(devices_cisco)
+    #enterConfigMode(devices_cisco)
     checkConfigMode(devices_cisco)
-    
-    #loggingBuffered(devices_cisco)
+    loggingBuffered(devices_cisco)
+    fromFile(devices_cisco)
     #exitConfigMode(devices_cisco)
-    #checkConfigMode(devices_cisco)
-    #showCommand(devices_cisco, "show ")
+    checkConfigMode(devices_cisco)
+    showCommand(devices_cisco, "show run ")
     
     
     
