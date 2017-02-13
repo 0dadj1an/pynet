@@ -7,6 +7,7 @@ def showArp(devices):
         conn = ConnectHandler(**device)
         output = conn.send_command("show arp")
         print "\n\n####### Device {0}#######".format(device['device_type'])
+        print "\n\n####### Device {0}#######".format(device['ip'])
         print output
         print "############ END  ##############"
    
@@ -16,7 +17,7 @@ def checkConfigMode(devices):
     for device in devices:
         conn = ConnectHandler(**device)
         output = conn.check_config_mode()
-        print "\n\n####### Device {0}{1}#######".format(device['ip', 'device_type'])
+        print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
    
@@ -24,7 +25,7 @@ def enterConfigMode(devices):
     for device in devices:
         conn = ConnectHandler(**device)
         output = conn.config_mode()
-        print "\n\n####### Device {0}{1}#######".format(device['ip', 'device_type'])
+        print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         output = conn.check_config_mode()
         print output
@@ -35,7 +36,7 @@ def loggingBuffered(devices):
         conn = ConnectHandler(**device)
         conn.config_mode()
         output = conn.send_command("loggin buffered 65000")
-        print "\n\n####### Device {0}{1}#######".format(device['ip', 'device_type'])
+        print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
         
@@ -44,7 +45,7 @@ def fromFile(devices):
         conn = ConnectHandler(**device)
         conn.config_mode()
         output = conn.send_config_from_file(config_file='config_file.txt')
-        print "\n\n####### Device {0}{1}#######".format(device['ip', 'device_type'])
+        print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
     
@@ -53,7 +54,7 @@ def showCommand(devices, command):
     for device in devices:
         conn = ConnectHandler(**device)
         output = conn.send_command(command)
-        print "\n\n####### Device {0}{1}#######".format(device['ip', 'device_type'])
+        print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
         
@@ -61,7 +62,7 @@ def exitConfigMode(devices):
      for device in devices:
         conn = ConnectHandler(**device)
         output = conn.exit_config_mode()
-        print "\n\n####### Device {0}{1}#######".format(device['ip', 'device_type'])
+        print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
     
