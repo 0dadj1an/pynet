@@ -13,14 +13,21 @@ def main():
     remote_conn02 = pexpect.spawn()
     remote_conn.timeout = 3
     
-    
-    
     remote_conn.expect('ssword:')
     remote_conn.sendline(password)
     
     remote_conn.expect('#')
     remote_conn.sendline('show ip int brief')
     remote_conn.expect('#')
+    remote_conn.sendline('conf t')
+    remote_conn.expect('#')
+    remote_conn.sendline('loggin buffered 65000')
+    remote_conn.expect('#')
+    remote_conn.sendline('exit')
+    remote_conn.expect('#')
+    remote_conn.sendline('show run')
+    remote_conn.expect('#')
+    
     print remote_conn.before
     
 
