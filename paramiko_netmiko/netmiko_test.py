@@ -31,7 +31,7 @@ def main():
      }
     
     router02 = {
-         'device_type': 'arista_eos',
+         'device_type': 'cisco_ios',
          'ip':   '184.105.247.71',
          'username': 'pyclass',
          'password': 'pasword_cisco',
