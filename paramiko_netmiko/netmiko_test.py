@@ -31,6 +31,7 @@ def enterConfigMode(devices):
 def loggingBuffered(devices):
     for device in devices:
         conn = ConnectHandler(**device)
+        conn.config_mode()
         output = conn.send_command("loggin buffered 65000")
         print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
@@ -39,7 +40,8 @@ def loggingBuffered(devices):
 def fromFile(devices):
     for device in devices:
         conn = ConnectHandler(**device)
-        output = send_config_from_file(config_file='config_file.txt')
+        conn.config_mode()
+        output = conn.send_config_from_file(config_file='config_file.txt')
         print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
@@ -103,7 +105,7 @@ def main():
     fromFile(devices_cisco)
     #exitConfigMode(devices_cisco)
     checkConfigMode(devices_cisco)
-    showCommand(devices_cisco, "show run ")
+    showCommand(devices_cisco, "show run | in loggi")
     
     
     
