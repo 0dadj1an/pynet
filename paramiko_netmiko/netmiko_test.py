@@ -34,9 +34,11 @@ def enterConfigMode(devices):
 def loggingBuffered(devices):
     for device in devices:
         conn = ConnectHandler(**device)
-        #output = conn.config_mode()
-        output = conn.send_command("loggin buffered 65000")
         print "\n\n####### Device {0}#######".format(device['device_type'])
+        output = conn.config_mode()
+        print output
+        output = conn.send_command("loggin buffered 65000")
+        
         print output
         print "############ END  ##############"
         
@@ -57,15 +59,16 @@ def showCommand(devices, command):
         print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
-        
-def exitConfigMode(devices):
-     for device in devices:
+ 
+def sendCommands(devices, commands):
+    for device in devices:
         conn = ConnectHandler(**device)
-        output = conn.exit_config_mode()
+        output = conn.send_config_set(commands)
         print "\n\n####### Device {0}#######".format(device['device_type'])
         print output
         print "############ END  ##############"
-    
+ 
+        
 
 
 def main():
@@ -101,13 +104,17 @@ def main():
     devices_all = [router01, router02, juniper_srx] 
     devices_cisco = [router01, router02]
     
+    commands = ['loggin buffered 65000']
+    
+    
+    
     showArp(devices_all)
     #enterConfigMode(devices_cisco)
     #checkConfigMode(devices_cisco)
-    loggingBuffered(devices_cisco)
+    #loggingBuffered(devices_cisco)
     fromFile(devices_cisco)
     #exitConfigMode(devices_cisco)
-    
+    sendCommands(devices_cisco, commands)
     showCommand(devices_cisco, "show run | in loggi")
     
     
