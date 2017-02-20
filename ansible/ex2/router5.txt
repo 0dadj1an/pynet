@@ -1,0 +1,42 @@
+ervice timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+!
+hostname router5
+!
+logging buffered 32000
+no logging console
+enable secret 0 ahoj
+!
+!
+access-list 98 remark *** SNMP ***
+access-list 98 permit any
+!
+snmp-server view VIEWSTD iso included
+snmp-server group READONLY v3 priv read VIEWSTD access 98
+snmp-server user pysnmp READONLY v3 auth sha auth_key priv aes 128 encrypt_key
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 500
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/24
+ switchport access vlan 500
+ switchport mode access
+ spanning-tree portfast
+!
+interface Vlan1
+ ip address 5.1.1.1 255.255.255.0
+ no ip route-cache
+!
+ip default-gateway 5.1.1.254
+snmp-server community PUBLIC RO
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!

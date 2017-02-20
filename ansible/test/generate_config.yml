@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Generate conf file
+    template: src=/home/ihrbacek/github/pynet/ansible/test.j2
+                  dest=/home/ihrbacek/github/pynet/ansible/{{item.hostname}}.txt
+    with_items:
+        - hostname: router1
+        - hostname: router2
+        - hostname: router3
+        - hostname: router4
+        - hostname: router5
+ 

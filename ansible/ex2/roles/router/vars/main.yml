@@ -1,0 +1,8 @@
+---
+test_routers:
+ - {hostname: router1, ip_addr: 1.1.1.1, default_gw: 1.1.1.254, access_vlan: 100, snmp_community: PUBLIC, secret: ahoj, SNMPv3: True }
+ - {hostname: router2, ip_addr: 2.1.1.1, default_gw: 2.1.1.254, access_vlan: 200, snmp_community: PUBLIC, secret: ahoj, SNMPv3: False }
+ - {hostname: router3, ip_addr: 3.1.1.1, default_gw: 3.1.1.254, access_vlan: 300, snmp_community: PUBLIC, secret: ahoj, SNMPv3: False }
+ - {hostname: router4, ip_addr: 4.1.1.1, default_gw: 4.1.1.254, access_vlan: 400, snmp_community: PUBLIC, secret: ahoj, SNMPv3: False }
+ - {hostname: router5, ip_addr: 5.1.1.1, default_gw: 5.1.1.254, access_vlan: 500, snmp_community: PUBLIC, secret: ahoj, SNMPv3: True }
+
