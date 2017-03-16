@@ -7,7 +7,7 @@ def main():
     
     ip = '184.105.247.70'
     username = 'pyclass'
-    password = '88newclass'
+    password = ''
     port = 8022
     remote_conn = pexpect.spawn('ssh -l {} {} -p {}'.format(username, password, port))
     remote_conn02 = pexpect.spawn()
