@@ -1,2 +1,0 @@
-print "Ahoj"
-print "Nazdar"
